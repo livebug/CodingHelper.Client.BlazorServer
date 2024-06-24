@@ -1,0 +1,13 @@
+﻿<Router AppAssembly="@typeof(Program).Assembly" @rendermode="RenderMode.InteractiveServer">
+    <Found Context="routeData">
+        <CascadingValue Value="routeData">
+            <RouteView RouteData="@routeData" DefaultLayout="@typeof(BasicLayout)" />
+        </CascadingValue>
+    </Found>
+    <NotFound>
+        <LayoutView Layout="@typeof(BasicLayout)">
+            <p>Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
+<AntContainer @rendermode="RenderMode.InteractiveServer"/>
