@@ -1,13 +1,13 @@
-﻿<Router AppAssembly="@typeof(Program).Assembly" @rendermode="RenderMode.InteractiveServer">
+﻿<Router AppAssembly="@typeof(Program).Assembly">
     <Found Context="routeData">
         <CascadingValue Value="routeData">
-            <RouteView RouteData="@routeData" DefaultLayout="@typeof(BasicLayout)" />
+            <RouteView RouteData="routeData" DefaultLayout="typeof(CodingHelper.Client.BlazorServer.Components.Layout.BasicLayout)" />
         </CascadingValue>
     </Found>
     <NotFound>
-        <LayoutView Layout="@typeof(BasicLayout)">
+        <LayoutView Layout="@typeof(CodingHelper.Client.BlazorServer.Components.Layout.BasicLayout)">
             <p>Sorry, there's nothing at this address.</p>
         </LayoutView>
     </NotFound>
 </Router>
-<AntContainer @rendermode="RenderMode.InteractiveServer"/>
+<AntContainer/>
