@@ -1,4 +1,6 @@
 using CodingHelper.Client.BlazorServer.Components;
+using Microsoft.AspNetCore.Components;
+using AntDesign.ProLayout;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddAntDesign();
+
+builder.Services.AddScoped(sp => new HttpClient
+{
+    BaseAddress = new Uri(sp.GetService<NavigationManager>()!.BaseUri)
+});
+builder.Services.Configure<ProSettings>(builder.Configuration.GetSection("ProSettings"));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

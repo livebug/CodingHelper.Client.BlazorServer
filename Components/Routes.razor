@@ -1,4 +1,5 @@
-﻿<Router AppAssembly="@typeof(Program).Assembly">
+﻿
+<Router AppAssembly="@typeof(Program).Assembly" >
     <Found Context="routeData">
         <CascadingValue Value="routeData">
             <RouteView RouteData="routeData" DefaultLayout="typeof(CodingHelper.Client.BlazorServer.Components.Layout.BasicLayout)" />
@@ -10,4 +11,3 @@
         </LayoutView>
     </NotFound>
 </Router>
-<AntContainer/>
