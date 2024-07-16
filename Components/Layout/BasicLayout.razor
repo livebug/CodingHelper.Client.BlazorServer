@@ -1,7 +1,8 @@
 ﻿@inherits LayoutComponentBase
 
 <AntDesign.ProLayout.BasicLayout 
-    Logo="@("https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg")"
+    Logo="@("./assets/logo.svg")"
+    SelectedKeys=@(new[] { "Home" })
     MenuData="_menuData">
     <RightContentRender>
     </RightContentRender>
@@ -12,7 +13,7 @@
         <FooterView Copyright="2021 Ant Design Blazor" Links="Links"></FooterView>
     </FooterRender>
 </AntDesign.ProLayout.BasicLayout>
-<SettingDrawer />
+<CodingHelper.Components.SettingDrawer />
 
 @code
 {
@@ -21,8 +22,29 @@
         new MenuDataItem
         {
             Path = "/",
-            Name = "home",
-            Key = "home",
+            Name = "Home",
+            Key = "Home",
+            Icon = "smile"
+        },
+        new MenuDataItem
+        {
+            Path = "/Welcome",
+            Name = "Welcome",
+            Key = "Welcome",
+            Icon = "smile",
+        },
+        new MenuDataItem
+        {
+            Path = "/counter",
+            Name = "Counter",
+            Key = "Counter",
+            Icon = "smile",
+        },
+        new MenuDataItem
+        {
+            Path = "/weather",
+            Name = "Weather",
+            Key = "Weather",
             Icon = "smile",
         }
     };
@@ -51,4 +73,4 @@
             BlankTarget = true,
         }
     };
-}    using Microsoft.AspNetCore.Mvc.Rendering;
+}   
