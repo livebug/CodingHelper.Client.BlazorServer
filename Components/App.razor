@@ -14,7 +14,8 @@
 </head>
 <body>
     <Routes @rendermode="RenderMode.InteractiveServer" />
-    <AntContainer @rendermode="RenderMode.InteractiveServer"/>
+    @* 为了动态地显示弹出组件，需要在 App.razor 中添加一个 <AntContainer /> 组件。 *@
+    <AntContainer id="antd" @rendermode="RenderMode.InteractiveServer"/>
     <script type="text/javascript" src="./js/g2plot.min.js")"></script>
     <script>
         const { Line } = G2Plot;
